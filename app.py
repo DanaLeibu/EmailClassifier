@@ -5,6 +5,7 @@ app = Flask(__name__)
 
 @app.route("/classify", methods=["POST"])
 def classify():
+    print("Received POST /classify")
     data = request.json
     
     if all(k in data for k in ("sender", "subject", "body")):
