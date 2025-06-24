@@ -21,8 +21,7 @@ To integrate the classifier with Gmail:
 
 1) Go to Google Apps Script and create a new project.
 2) Paste the content of code.gs file + appsscript.json file (included in this repository).
-3) Replace this placeholder line: 
-const response = UrlFetchApp.fetch("https://your-server-url.com/classify", options) with your actual backend URL
+3) The code already includes the correct backend URL for demonstarion.
 4) Go to Deploy → Test deployments
 5) Set the deployment type to: Workspace Add-on with Gmail scope
 6) Authorize the required permissions
@@ -32,7 +31,7 @@ const response = UrlFetchApp.fetch("https://your-server-url.com/classify", optio
 
 ## 📉 Limitations
 - Doesn’t handle attachments or embedded HTML parsing
-- Email classification model is trained on a small dataset (~100 examples)
+- The model is trained on a small dataset (~100 examples)
 - No confidence score returned from the classification model
 
 
@@ -47,6 +46,6 @@ cd EmailClassifier
 
 pip install -r requirements.txt  
 python app.py  
-you can deploy the backend to services like Render, Railway, Heroku, AWS EC2  
+The backend for this project is deployed on Render for testing and demonstration.
 
 

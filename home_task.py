@@ -68,16 +68,16 @@ def classify_with_model(sender, subject, body):
     pred = clf.predict(vec)[0]
     return {0: "Safe", 1: "Suspicious", 2: "Phishing"}[pred]
 
+if __name__ == "__main__":
+    for i in range(X_test.shape[0]):
+        idx = test_idx[i]
+        subject = df.loc[idx, "subject"]
+        body = df.loc[idx, "body"]
+        sender = df.loc[idx, "sender"]
+        actual = df.loc[idx, "classification"]
+        predicted = classify_with_model(sender, subject,body)
 
-for i in range(X_test.shape[0]):
-    idx = test_idx[i]
-    subject = df.loc[idx, "subject"]
-    body = df.loc[idx, "body"]
-    sender = df.loc[idx, "sender"]
-    actual = df.loc[idx, "classification"]
-    predicted = classify_with_model(sender, subject,body)
-
-    print(f"Email {i+1}:")
-    print(f"Predicted: {predicted} | Actual: {actual}")
+        print(f"Email {i+1}:")
+        print(f"Predicted: {predicted} | Actual: {actual}")
     
 

@@ -16,6 +16,7 @@ function createScanButton() {
     .build();
 }
 
+
 function scanForPhishing(e) {
   try {
     const messageId = e.gmail.messageId;
@@ -43,8 +44,7 @@ function scanForPhishing(e) {
 
 function callPhishingDetectionAPI(emailData) {
   try {
-    
-    const response = UrlFetchApp.fetch('https://your-render-app.onrender.com/classify', {
+    const response = UrlFetchApp.fetch('https://emailclassifier-hlxd.onrender.com/classify', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       payload: JSON.stringify(emailData)
